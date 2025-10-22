@@ -245,6 +245,10 @@ nav {
   align-items: center;
 }
 
+.hero-copy {
+  max-width: 540px;
+}
+
 .hero-copy h1 {
   font-size: clamp(2.4rem, 4vw, 3.8rem);
   line-height: 1.08;
@@ -318,6 +322,22 @@ nav {
   padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   text-align: center;
+}
+
+.manifesto {
+  position: relative;
+}
+
+.manifesto-copy {
+  display: grid;
+  gap: 18px;
+  max-width: 760px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.manifesto-copy p {
+  margin: 0;
 }
 
 .metric-card h3 {
@@ -1281,8 +1301,14 @@ nav {
 
 /* Responsive */
 @media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+    padding: 140px 0 100px;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
 
   .hero-highlights {
@@ -1303,6 +1329,10 @@ nav {
     padding: 30px 5%;
     transform: translateY(-120%);
     transition: transform 0.3s ease;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
   }
 
   nav.open {
@@ -1321,6 +1351,12 @@ nav {
 
   .hero {
     padding-top: 120px;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 40px;
   }
 
   .hero-highlights {
@@ -1350,8 +1386,52 @@ nav {
     padding: 80px 0;
   }
 
+  .container {
+    width: min(var(--container-width), 94%);
+  }
+
+  .hero {
+    padding: 110px 0 70px;
+  }
+
+  .hero-content {
+    gap: 32px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 16px 22px;
+  }
+
   .hero-metrics {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .highlight-card {
+    padding: 20px;
+  }
+
+  .highlight-card strong {
+    font-size: 1.08rem;
+    line-height: 1.5;
   }
 
   .service-card,
@@ -1364,7 +1444,42 @@ nav {
     padding: 24px;
   }
 
+  .metric-card {
+    padding: 18px;
+  }
+
+  .section-header {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .manifesto-copy {
+    gap: 16px;
+  }
+
   .cta-banner {
     padding: 80px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .container {
+    padding: 14px 0;
+  }
+
+  .logo img {
+    height: 44px;
+  }
+
+  .hero-copy .badge {
+    font-size: 0.75rem;
+  }
+
+  .metric-card h3 {
+    font-size: 1.8rem;
   }
 }
